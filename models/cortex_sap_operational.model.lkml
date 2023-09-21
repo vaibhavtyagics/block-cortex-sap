@@ -27,8 +27,11 @@ persist_with: cortex_default_datagroup
 
 include: "/LookML_Dashboard/*.dashboard.lookml"
 
+# include: "/LookML_Dashboard/9a_Vendor_Performance.dashboard.lookml"
+
 named_value_format: Greek_Number_Format {
-  value_format: "[>=1000000000]0.0,,,\"B\";[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0.0"
+  value_format: "0.000,\" K\""
+  # value_format: "[>=Client_MANDT0000000]0.0,,,\"B\";[>=Client_MANDT0000]0.0,,\"M\";[>=Client_MANDT0]0.0,\"K\";0.0"
 }
 
 explore: data_intelligence_ar {
@@ -182,14 +185,14 @@ explore: sales_orders {
           and (${sales_order_partner_function.item_posnr} is Null or ${sales_order_partner_function_header.item_posnr} = '000000');;
     }
 
-    sql_always_where: ${client_mandt}='{{ _user_attributes['client_id_rep'] }}' ;;
+    sql_always_where: ${client_mandt}="100" ;;
 
   }
 
   ########################################### Finanace Dashboards ########################################################################
 
 explore: vendor_performance {
-  sql_always_where: ${vendor_performance.client_mandt} = '{{ _user_attributes['client_id_rep'] }}'
+  sql_always_where: ${vendor_performance.client_mandt} = "100"
     and ${language_map.looker_locale}='{{ _user_attributes['locale'] }}'
     ;;
 
@@ -213,32 +216,32 @@ explore: vendor_performance {
 }
 
 explore: days_payable_outstanding_v2 {
-  sql_always_where: ${client_mandt} = '{{ _user_attributes['client_id_rep'] }}' ;;
+  sql_always_where: ${client_mandt} = "100" ;;
 }
 
 
 explore: accounts_payable_v2 {
 
-  sql_always_where: ${accounts_payable_v2.client_mandt} =  '{{ _user_attributes['client_id_rep'] }}';;
+  sql_always_where: ${accounts_payable_v2.client_mandt} =  "100";;
 }
 
 explore: cash_discount_utilization {
-  sql_always_where: ${client_mandt} = '{{ _user_attributes['client_id_rep'] }}';;
+  sql_always_where: ${client_mandt} = "100";;
 }
 
 
 explore: accounts_payable_overview_v2 {
 
-  sql_always_where: ${accounts_payable_overview_v2.client_mandt} =  '{{ _user_attributes['client_id_rep'] }}' ;;
+  sql_always_where: ${accounts_payable_overview_v2.client_mandt} =  "100" ;;
 }
 
 explore: accounts_payable_turnover_v2 {
 
-  sql_always_where: ${accounts_payable_turnover_v2.client_mandt} = '{{ _user_attributes['client_id_rep'] }}' ;;
+  sql_always_where: ${accounts_payable_turnover_v2.client_mandt} = "100" ;;
 }
 
 explore: materials_valuation_v2 {
-  sql_always_where: ${client_mandt} = '{{ _user_attributes['client_id_rep'] }}' ;;
+  sql_always_where: ${client_mandt} = "100" ;;
 }
 
 ########################################### Finanace Dashboards End ########################################################################
@@ -247,7 +250,7 @@ explore: materials_valuation_v2 {
 
 
 explore: inventory_metrics_overview {
-  sql_always_where: ${inventory_metrics_overview.client_mandt} = '{{ _user_attributes['client_id_rep'] }}'
+  sql_always_where: ${inventory_metrics_overview.client_mandt} = "100"
   and ${language_map.looker_locale}='{{ _user_attributes['locale'] }}';;
 
   join: inventory_by_plant {
@@ -268,7 +271,7 @@ explore: inventory_metrics_overview {
 }
 
 explore: inventory_by_plant {
-    sql_always_where: ${inventory_by_plant.client_mandt} = '{{ _user_attributes['client_id_rep'] }}'
+    sql_always_where: ${inventory_by_plant.client_mandt} = "100"
         and ${language_map.looker_locale}='{{ _user_attributes['locale'] }}'
     ;;
 
