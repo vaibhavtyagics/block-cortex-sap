@@ -1,8 +1,9 @@
 - dashboard: accounts_receivable
-  title: "Accounts Receivable"
+  title: Accounts Receivable
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
+  preferred_slug: ZZ4EBykXntOfwQO9psY5IN
   elements:
   - title: Account Receivable by Company
     name: Account Receivable by Company
@@ -10,15 +11,29 @@
     explore: data_intelligence_ar
     type: looker_pie
     fields: [data_intelligence_ar.Company_Name, data_intelligence_ar.Sum_of_Receivables]
-    filters: {}
     sorts: [data_intelligence_ar.Company_Name]
     limit: 500
-    dynamic_fields: [{category: measure, expression: '', label: Total Receivable,
-        value_format: '0.00,"K"', value_format_name: !!null '', based_on: data_intelligence_ar.Accounts_Receivable_Local_Currency,
-        _kind_hint: measure, measure: total_receivable, type: sum, _type_hint: sum},
-      {category: measure, expression: '', label: Total Receivable, value_format: '0.00,"K"',
-        value_format_name: !!null '', based_on: data_intelligence_ar.Accounts_Receivable_Global_Currency,
-        _kind_hint: measure, measure: total_receivable_1, type: sum, _type_hint: sum}]
+    dynamic_fields:
+    - category: measure
+      expression: ''
+      label: Total Receivable
+      value_format: 0.00,"K"
+      value_format_name:
+      based_on: data_intelligence_ar.Accounts_Receivable_Local_Currency
+      _kind_hint: measure
+      measure: total_receivable
+      type: sum
+      _type_hint: sum
+    - category: measure
+      expression: ''
+      label: Total Receivable
+      value_format: 0.00,"K"
+      value_format_name:
+      based_on: data_intelligence_ar.Accounts_Receivable_Global_Currency
+      _kind_hint: measure
+      measure: total_receivable_1
+      type: sum
+      _type_hint: sum
     value_labels: legend
     label_type: labVal
     inner_radius: 45
@@ -36,7 +51,6 @@
       CYMBAL EU-GERMANY: "#FD9577"
       CYMBAL US02 US WEST: "#7CC8FA"
       CYMBAL JP JAPAN: "#C8A7F9"
-    series_labels: {}
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -65,7 +79,6 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    series_types: {}
     font_size: 12
     leftAxisLabelVisible: false
     leftAxisLabel: ''
@@ -107,12 +120,27 @@
       data_intelligence_ar.Past_Due_Interval: "-Due after Key Date"
     sorts: [data_intelligence_ar.Past_Due_Interval desc]
     limit: 500
-    dynamic_fields: [{category: measure, expression: '', label: Overdue Amount, value_format: '0.00,"K"',
-        value_format_name: !!null '', based_on: data_intelligence_ar.Open_and_Over_Due_Local_Currency,
-        _kind_hint: measure, measure: overdue_amount, type: sum, _type_hint: sum},
-      {category: measure, expression: '', label: Overdue Amount, value_format: '0.00,"K"',
-        value_format_name: !!null '', based_on: data_intelligence_ar.Open_and_Over_Due_Global_Currency,
-        _kind_hint: measure, measure: overdue_amount_1, type: sum, _type_hint: sum}]
+    dynamic_fields:
+    - category: measure
+      expression: ''
+      label: Overdue Amount
+      value_format: 0.00,"K"
+      value_format_name:
+      based_on: data_intelligence_ar.Open_and_Over_Due_Local_Currency
+      _kind_hint: measure
+      measure: overdue_amount
+      type: sum
+      _type_hint: sum
+    - category: measure
+      expression: ''
+      label: Overdue Amount
+      value_format: 0.00,"K"
+      value_format_name:
+      based_on: data_intelligence_ar.Open_and_Over_Due_Global_Currency
+      _kind_hint: measure
+      measure: overdue_amount_1
+      type: sum
+      _type_hint: sum
     value_labels: legend
     label_type: labVal
     inner_radius: 45
@@ -169,7 +197,6 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    series_types: {}
     font_size: 12
     show_null_points: true
     interpolation: linear
@@ -189,7 +216,6 @@
     explore: data_intelligence_ar
     type: single_value
     fields: [data_intelligence_ar.Total_Receivables]
-    filters: {}
     limit: 500
     custom_color_enabled: true
     show_single_value_title: true
@@ -232,7 +258,6 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    series_types: {}
     listen:
       DSO Period: data_intelligence_ar.Day_Sales_Outstanding
       Currency: data_intelligence_ar.Currency_Required
@@ -249,7 +274,6 @@
     explore: data_intelligence_ar
     type: single_value
     fields: [data_intelligence_ar.Sum_of_Open_and_Over_Due_Local_Currency]
-    filters: {}
     limit: 500
     custom_color_enabled: true
     show_single_value_title: true
@@ -292,7 +316,6 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    series_types: {}
     note_state: collapsed
     note_display: above
     note_text: Past Due Date
@@ -318,12 +341,27 @@
       data_intelligence_ar.Posting_month: 3 months
     sorts: [data_intelligence_ar.Posting_month desc]
     limit: 500
-    dynamic_fields: [{category: measure, expression: '', label: Total Receivable,
-        value_format: '', value_format_name: !!null '', based_on: data_intelligence_ar.Accounts_Receivable_Global_Currency,
-        _kind_hint: measure, measure: total_receivable, type: sum, _type_hint: number},
-      {category: measure, expression: '', label: Total Sales, value_format: '', value_format_name: !!null '',
-        based_on: data_intelligence_ar.Sales_Global_Currency, _kind_hint: measure,
-        measure: total_sales, type: sum, _type_hint: number}]
+    dynamic_fields:
+    - category: measure
+      expression: ''
+      label: Total Receivable
+      value_format: ''
+      value_format_name:
+      based_on: data_intelligence_ar.Accounts_Receivable_Global_Currency
+      _kind_hint: measure
+      measure: total_receivable
+      type: sum
+      _type_hint: number
+    - category: measure
+      expression: ''
+      label: Total Sales
+      value_format: ''
+      value_format_name:
+      based_on: data_intelligence_ar.Sales_Global_Currency
+      _kind_hint: measure
+      measure: total_sales
+      type: sum
+      _type_hint: number
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -362,13 +400,9 @@
     hidden_series: []
     hide_legend: false
     label_value_format: ''
-    series_types: {}
     series_colors:
       total_receivable: "#f56776"
       total_sales: "#A5EF55"
-    series_labels:
-      sum_of_accounts_receivable_local_currency: Account Receivables
-      sum_of_sales_local_currency: Sales
     x_axis_datetime_label: "%b %Y"
     swap_axes: false
     defaults_version: 1
@@ -391,7 +425,6 @@
     explore: data_intelligence_ar
     type: single_value
     fields: [data_intelligence_ar.Total_Doubtful_Receivables]
-    filters: {}
     limit: 500
     custom_color_enabled: true
     show_single_value_title: true
@@ -403,7 +436,6 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     value_format: ''
-    series_types: {}
     defaults_version: 1
     note_state: collapsed
     note_display: above
@@ -424,7 +456,6 @@
     explore: data_intelligence_ar
     type: single_value
     fields: [data_intelligence_ar.Total_DSO]
-    filters: {}
     limit: 500
     custom_color_enabled: true
     show_single_value_title: true
@@ -465,7 +496,6 @@
     totals_color: "#808080"
     hidden_fields:
     defaults_version: 1
-    series_types: {}
     listen:
       DSO Period: data_intelligence_ar.Day_Sales_Outstanding
       Currency: data_intelligence_ar.Currency_Required
@@ -518,9 +548,17 @@
         desc 4]
     limit: 500
     row_total: right
-    dynamic_fields: [{category: measure, expression: '', label: Overdue Amount, value_format: '0.00,"K"',
-        value_format_name: !!null '', based_on: data_intelligence_ar.Open_and_Over_Due_Local_Currency,
-        _kind_hint: measure, measure: overdue_amount, type: sum, _type_hint: sum}]
+    dynamic_fields:
+    - category: measure
+      expression: ''
+      label: Overdue Amount
+      value_format: 0.00,"K"
+      value_format_name:
+      based_on: data_intelligence_ar.Open_and_Over_Due_Local_Currency
+      _kind_hint: measure
+      measure: overdue_amount
+      type: sum
+      _type_hint: sum
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -568,7 +606,6 @@
       num_rows: '5'
     hidden_series: [Row Total - sum_of_open_and_over_due_local_currency]
     label_value_format: ''
-    series_types: {}
     series_colors:
       "> 30 Days - overdue_amount": "#FDEC85"
       1- 10 Days - overdue_amount: "#ACE9F5"
@@ -600,7 +637,6 @@
   - name: Overdue Receivable Breakdown
     type: text
     title_text: Overdue Receivable Breakdown
-    subtitle_text: ''
     body_text: ''
     row: 7
     col: 12
@@ -660,10 +696,8 @@
     show_null_points: true
     interpolation: linear
     defaults_version: 1
-    series_types: {}
     hidden_fields: []
     hidden_points_if_no: []
-    series_labels: {}
     listen:
       DSO Period: data_intelligence_ar.Day_Sales_Outstanding
       Currency: data_intelligence_ar.Currency_Required
@@ -737,7 +771,7 @@
   - name: Currency
     title: Currency
     type: field_filter
-    default_value: "{{ _user_attributes['default_value_currency_required'] }}"
+    default_value: ''
     allow_multiple_values: true
     required: false
     ui_config:
