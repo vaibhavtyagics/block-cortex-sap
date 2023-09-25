@@ -29,6 +29,9 @@ persist_with: cortex_default_datagroup
 
 include: "/LookML_Dashboard/1a_Delivery_Performance.dashboard.lookml"
 include: "/LookML_Dashboard/10a_Stock_Value_Details.dashboard.lookml"
+include: "/LookML_Dashboard/1_Order_Fulfillment.dashboard.lookml"
+include: "/LookML_Dashboard/2a_Canceled_Orders.dashboard.lookml"
+include: "/LookML_Dashboard/2b_One_Touch_Order.dashboard.lookml"
 
 
 # include: "/LookML_Dashboard/9a_Vendor_Performance.dashboard.lookml"
