@@ -1,5 +1,5 @@
-- dashboard: sap_finance_sa_08_a_spend_by_top_vendors
-  title: "Spend Analysis by Top Vendors"
+- dashboard: spend_analysis_by_top_vendors
+  title: Spend Analysis by Top Vendors
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
@@ -87,7 +87,6 @@
       vendor_performance.net_order_valuein_pocurrency_netwr: "#,##0.00"
     truncate_column_names: false
     defaults_version: 1
-    series_types: {}
     listen:
       Company Code: vendor_performance.company_text_butxt
       Purchasing Organization: vendor_performance.purchasing_organization_text_ekotx
@@ -114,9 +113,15 @@
     sorts: [vendor_performance.name1 desc, vendor_performance.Invoice_date_month desc]
     limit: 500
     column_limit: 5
-    dynamic_fields: [{measure: sum_of_amount_in_local_currency_dmbtr, based_on: vendor_performance.amount_in_local_currency_dmbtr,
-        expression: '', label: Sum of Amount In Local Currency Dmbtr, type: sum, _kind_hint: measure,
-        _type_hint: number, id: SjXDTbdlNW}]
+    dynamic_fields:
+    - measure: sum_of_amount_in_local_currency_dmbtr
+      based_on: vendor_performance.amount_in_local_currency_dmbtr
+      expression: ''
+      label: Sum of Amount In Local Currency Dmbtr
+      type: sum
+      _kind_hint: measure
+      _type_hint: number
+      id: SjXDTbdlNW
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -157,7 +162,6 @@
     x_axis_zoom: true
     y_axis_zoom: true
     font_size: '10'
-    series_types: {}
     label_color: [grey]
     x_axis_datetime_label: "%m/%y"
     show_row_numbers: true
@@ -236,7 +240,6 @@
       first_last: first
       num_rows: '5'
     font_size: '10'
-    series_types: {}
     series_colors:
       vendor_performance.sum_invoice_amount_in_target_currency: "#7CB342"
     label_color: [grey]
@@ -272,7 +275,7 @@
   - name: Invoice Date
     title: Invoice Date
     type: field_filter
-    default_value: 365 day
+    default_value: last year
     allow_multiple_values: true
     required: true
     ui_config:

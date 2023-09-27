@@ -25,13 +25,14 @@ persist_with: cortex_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-# include: "/LookML_Dashboard/*.dashboard.lookml"
+include: "/LookML_Dashboard/*.dashboard.lookml"
 
 include: "/LookML_Dashboard/1a_Delivery_Performance.dashboard.lookml"
 include: "/LookML_Dashboard/10a_Stock_Value_Details.dashboard.lookml"
 include: "/LookML_Dashboard/1_Order_Fulfillment.dashboard.lookml"
 include: "/LookML_Dashboard/2a_Canceled_Orders.dashboard.lookml"
 include: "/LookML_Dashboard/2b_One_Touch_Order.dashboard.lookml"
+include: "/LookML_Dashboard/10_Inventory_Management.dashboard.lookml"
 
 
 # include: "/LookML_Dashboard/9a_Vendor_Performance.dashboard.lookml"

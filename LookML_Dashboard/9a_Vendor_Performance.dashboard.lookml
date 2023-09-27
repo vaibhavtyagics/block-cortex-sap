@@ -1,5 +1,5 @@
-- dashboard: sap_finance_vp_09_a_delivery_performance_trend
-  title: "Vendor Delivery Performance Trend"
+- dashboard: vendor_delivery_performance_trend
+  title: Vendor Delivery Performance Trend
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
@@ -64,10 +64,8 @@
       vendor_performance.vendor_account_number_lifnr: Vendor Number
       vendor_performance.document_number_ebeln: Purchase Order
       vendor_performance.item_ebelp: Purchase Order Item
-      materials_md.material_text_maktx: Material
       vendor_performance.Actual_Receipt_Date_date: Goods Receipt Date
       vendor_performance.Requested_delivery_date_date: Requested Delivery Date
-      vendor_performance.PO_Creation_Date_date: PO Creation Date
       vendor_performance.Schedule_line_date_date: Schedule Line Date
       vendor_performance.Invoice_date_date: Invoice Date
       vendor_performance.poquantity_menge: PO Quantity
@@ -76,15 +74,11 @@
       vendor_performance.goods_receipt_quantity: GR Quantity
       vendor_performance.invoice_quantity: Invoice Quantity
       vendor_performance.uo_m_meins3: Invoice Quantity Unit
-      vendor_performance.Delivery: Delivery
       vendor_performance.On_Time: Is On-time
       vendor_performance.item_delivery_date_eindt_date: Actual Delivery Date
       vendor_performance.purchasing_document_date_bedat_date: Purchase Document Date
-      vendor_performance.DeliveredorNot: Delivered (Yes/No)
       vendor_performance.purchasing_group_text_eknam: Purchasing Group
-      vendor_performance.Rejected: Rejected
       vendor_performance.In_full: Is In-full
-      material_types_md.description_of_material_type_mtbez: Material Type
       vendor_performance.is_delivered: Is Delivered
       vendor_performance.is_rejected: Is Rejected
       vendor_performance.material_description: Material
@@ -97,23 +91,19 @@
       vendor_performance.name1: 221
       vendor_performance.document_number_ebeln: 92
       vendor_performance.item_ebelp: 81
-      materials_md.material_text_maktx: 240
       vendor_performance.Actual_Receipt_Date_date: 84
       vendor_performance.Requested_delivery_date_date: 82
-      vendor_performance.PO_Creation_Date_date: 240
       vendor_performance.Invoice_date_date: 91
       vendor_performance.poquantity_menge: 78
       vendor_performance.invoice_quantity: 84
       vendor_performance.uo_m_meins3: 75
       vendor_performance.On_Time: 98
-      vendor_performance.Delivery: 240
       vendor_performance.country_key_land1: 84
       vendor_performance.Schedule_line_date_date: 87
       vendor_performance.item_delivery_date_eindt_date: 90
       vendor_performance.uo_m_meins: 95
       vendor_performance.goods_receipt_quantity: 86
       vendor_performance.uo_m_meins2: 91
-      vendor_performance.DeliveredorNot: 120
       vendor_performance.material_description: 194
       vendor_performance.material_type_description: 129
       vendor_performance.purchasing_document_date_bedat_date: 98
@@ -140,7 +130,6 @@
     show_null_points: true
     interpolation: linear
     defaults_version: 1
-    series_types: {}
     hidden_fields: []
     y_axes: []
     listen:
@@ -214,7 +203,6 @@
     hidden_series: []
     font_size: '10'
     label_value_format: ''
-    series_types: {}
     series_colors:
       vendor_performance.Vendor_Ontime_del: "#1A73E8"
       vendor_performance.Infull_rate_del: "#8ebde8"
@@ -315,7 +303,7 @@
   - name: Purchase Order Date
     title: Purchase Order Date
     type: field_filter
-    default_value: 365 day
+    default_value: last year
     allow_multiple_values: true
     required: true
     ui_config:

@@ -1,5 +1,5 @@
-- dashboard: sap_finance_sa_08_spend_analysis
-  title: "Spend Analysis"
+- dashboard: spend_analysis
+  title: Spend Analysis
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
@@ -82,7 +82,6 @@
       first_last: first
       num_rows: '5'
     font_size: '10'
-    series_types: {}
     series_colors:
       vendor_performance.sum_invoice_amount_in_target_currency: "#7CB342"
       vendor_performance.sum_invoice_amount_in_target_currency_by_top_vendor: "#7CB342"
@@ -119,12 +118,17 @@
     explore: vendor_performance
     type: single_value
     fields: [vendor_performance.sum_invoice_amount_in_target_currency]
-    filters: {}
     limit: 500
     column_limit: 50
-    dynamic_fields: [{measure: sum_of_amount_in_local_currency_dmbtr, based_on: vendor_performance.amount_in_local_currency_dmbtr,
-        expression: '', label: Sum of Amount In Local Currency Dmbtr, type: sum, _kind_hint: measure,
-        _type_hint: number, id: SjXDTbdlNW}]
+    dynamic_fields:
+    - measure: sum_of_amount_in_local_currency_dmbtr
+      based_on: vendor_performance.amount_in_local_currency_dmbtr
+      expression: ''
+      label: Sum of Amount In Local Currency Dmbtr
+      type: sum
+      _kind_hint: measure
+      _type_hint: number
+      id: SjXDTbdlNW
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -135,7 +139,6 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     value_format: "#,##0.0,, \\M"
-    series_types: {}
     defaults_version: 1
     hidden_fields: []
     y_axes: []
@@ -161,12 +164,17 @@
     explore: vendor_performance
     type: single_value
     fields: [vendor_performance.count_vendors]
-    filters: {}
     limit: 500
     column_limit: 50
-    dynamic_fields: [{measure: count_of_vendor_account_number_lifnr, based_on: vendor_performance.vendor_account_number_lifnr,
-        expression: '', label: Count of Vendor Account Number Lifnr, type: count_distinct,
-        _kind_hint: measure, _type_hint: number, id: Slp0sg3lDL}]
+    dynamic_fields:
+    - measure: count_of_vendor_account_number_lifnr
+      based_on: vendor_performance.vendor_account_number_lifnr
+      expression: ''
+      label: Count of Vendor Account Number Lifnr
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+      id: Slp0sg3lDL
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -204,7 +212,6 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    series_types: {}
     hidden_fields: []
     y_axes: []
     note_state: collapsed
@@ -229,15 +236,25 @@
     explore: vendor_performance
     type: single_value
     fields: [vendor_performance.count_cleared_invoices]
-    filters: {}
     limit: 500
     column_limit: 50
-    dynamic_fields: [{measure: sum_of_invoice_amount_in_source_currency, based_on: vendor_performance.invoice_amount_in_source_currency,
-        expression: '', label: Sum of Invoice Amount In Source Currency, type: sum,
-        _kind_hint: measure, _type_hint: number, id: C0LHmUs3NJ}, {measure: sum_of_invoice_amount_in_target_currency,
-        based_on: vendor_performance.invoice_amount_in_target_currency, expression: '',
-        label: Sum of Invoice Amount In Target Currency, type: sum, _kind_hint: measure,
-        _type_hint: number, id: pp8P3n4JXd}]
+    dynamic_fields:
+    - measure: sum_of_invoice_amount_in_source_currency
+      based_on: vendor_performance.invoice_amount_in_source_currency
+      expression: ''
+      label: Sum of Invoice Amount In Source Currency
+      type: sum
+      _kind_hint: measure
+      _type_hint: number
+      id: C0LHmUs3NJ
+    - measure: sum_of_invoice_amount_in_target_currency
+      based_on: vendor_performance.invoice_amount_in_target_currency
+      expression: ''
+      label: Sum of Invoice Amount In Target Currency
+      type: sum
+      _kind_hint: measure
+      _type_hint: number
+      id: pp8P3n4JXd
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -248,7 +265,6 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     value_format: ''
-    series_types: {}
     defaults_version: 1
     hidden_fields: []
     y_axes: []
@@ -290,7 +306,6 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    series_types: {}
     note_state: collapsed
     note_display: hover
     note_text: Distribution of total spend by vendor country during the invoice date
@@ -313,7 +328,6 @@
     explore: vendor_performance
     type: looker_pie
     fields: [vendor_performance.purchasing_organization_text_ekotx, vendor_performance.sum_invoice_amount_in_target_currency]
-    filters: {}
     sorts: [vendor_performance.sum_invoice_amount_in_target_currency desc 0]
     limit: 500
     column_limit: 50
@@ -327,7 +341,6 @@
       options:
         steps: 5
     series_colors: {}
-    series_types: {}
     defaults_version: 1
     hidden_fields: []
     y_axes: []
@@ -391,7 +404,6 @@
     x_axis_zoom: true
     y_axis_zoom: true
     font_size: '10'
-    series_types: {}
     label_color: [grey]
     show_row_numbers: true
     truncate_column_names: false
@@ -425,13 +437,18 @@
     type: looker_area
     fields: [vendor_performance.Invoice_date_month, vendor_performance.sum_invoice_amount_in_target_currency]
     fill_fields: [vendor_performance.Invoice_date_month]
-    filters: {}
     sorts: [vendor_performance.Invoice_date_month]
     limit: 500
     column_limit: 50
-    dynamic_fields: [{measure: sum_of_amount_in_local_currency_dmbtr, based_on: vendor_performance.amount_in_local_currency_dmbtr,
-        expression: '', label: Sum of Amount In Local Currency Dmbtr, type: sum, _kind_hint: measure,
-        _type_hint: number, id: TVppvr21qh}]
+    dynamic_fields:
+    - measure: sum_of_amount_in_local_currency_dmbtr
+      based_on: vendor_performance.amount_in_local_currency_dmbtr
+      expression: ''
+      label: Sum of Amount In Local Currency Dmbtr
+      type: sum
+      _kind_hint: measure
+      _type_hint: number
+      id: TVppvr21qh
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -474,10 +491,7 @@
     y_axis_zoom: true
     font_size: '10'
     label_value_format: ''
-    series_types: {}
     series_colors: {}
-    series_point_styles:
-      vendor_performance.sum_spend_by_month: diamond
     label_color: ["#80868B"]
     x_axis_datetime_label: "%m/%y"
     x_axis_label_rotation: -75
@@ -525,7 +539,6 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    series_types: {}
     note_state: collapsed
     note_display: hover
     note_text: Distribution of total spend by purchasing group during the invoice
@@ -546,7 +559,7 @@
   - name: Invoice Date
     title: Invoice Date
     type: field_filter
-    default_value: 365 day
+    default_value: last year
     allow_multiple_values: true
     required: true
     ui_config:
