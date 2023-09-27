@@ -337,8 +337,6 @@
     fields: [data_intelligence_ar.Posting_month, data_intelligence_ar.Sum_of_Receivables,
       data_intelligence_ar.Sum_of_Sales]
     fill_fields: [data_intelligence_ar.Posting_month]
-    filters:
-      data_intelligence_ar.Posting_month: 3 months
     sorts: [data_intelligence_ar.Posting_month desc]
     limit: 500
     dynamic_fields:
